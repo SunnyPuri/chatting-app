@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chatting App</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/lockscreen.css"/>
+        <link rel="stylesheet" href="css/font-awesome.min.css"/>
+
+    </head>
+
+    <body class="lockscreen">
+        
+        <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="color: #fff;">My Chat</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right" id="logout">
+            <li class="active"><a href="">Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+        
+        <div class="container chat-area">
+            <div id="userFormArea" class="row">
+                <div class="center" >            
+                    <div class="headline text-center" id="time">
+
+                    </div>
+                    <div class="lockscreen-name">
+<!--                        <a target="_blank" href="http://facebook.com/purisunny">Sunny</a>-->
+                    </div>
+                    <div class="lockscreen-item">
+                    <div class="lockscreen-image">
+                        <img title="Sunny Puri" src="img/profile.jpg" alt="Sunny Puri"/>
+                    </div>
+                    <div class="lockscreen-credentials">   
+
+                        <form action="javascript:void(0);" id="userForm">
+                        <input type="hidden" class="form-control"  name="email" id="email"
+                           placeholder="Email Id" value="admin">
+                        <div class="input-group">
+                            <input class="form-control" type="text" id="username" autocomplete="off" placeholder="Enter Your Name" required >
+                            <div class="input-group-btn">
+                                <button type="submit" name="submit" class="btn btn-flat"><i class="fa fa-arrow-right text-muted"></i></button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    </div>
+                    <div class="lockscreen-link">
+                        <a href="http://www.sunnypuri.in" target="_blank">Sunny Puri</a> 
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="messageArea" class="row">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading" id="accordion">
+                                            <span class="glyphicon glyphicon-comment"></span> Online
+                                            <div class="btn-group pull-right">
+                                                <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapse-online">
+                                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="panel-collapse collapse in" id="collapse-online">
+                                            <div class="panel-body" id="panel-body">
+                                                <ul class="list-group" id="users"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading" id="accordion">
+                                            <span class="glyphicon glyphicon-comment"></span> Chat
+                                            <div class="btn-group pull-right">
+                                                <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <div class="panel-collapse collapse in" id="collapseOne">
+                                        <div class="panel-body" id="chat-panel-body">
+                                            <ul class="chat">
+                                                
+                                                <div class="chat" id="chat">
+                                                </div>
+                                                
+                                            </ul>
+                                        </div>
+                                        <div class="panel-footer">
+                                             <form id="messageForm">
+                                            <div class="input-group">
+
+                                                <input id="message" type="text" class="form-control input-sm" placeholder="Type your message here..." autocomplete="off" required autofocus/>
+                                                <span class="input-group-btn">
+                                                    <button type="submit" class="btn btn-warning btn-sm" id="btn-chat">
+                                                        Send</button>
+                                                </span>
+
+                                            </div>
+                                                </form>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation" style="height:8%;margin-bottom:-2%;">
+		<div class="navbar-inner">
+			<div class="container">
+				<i class="text-primary pull-left">
+					<a href="javascript:void(0);" target="_blank" >My Chat</a>
+				</i>
+				<i class="text-primary pull-right">
+					<a href="http://www.sunnypuri.in" target="_blank">Sunny Puri</a>
+				</i>
+			</div>    
+		</div>			
+	   </nav>
+        
+        <script  src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/timer.js"></script>
+    </body>
+</html>
